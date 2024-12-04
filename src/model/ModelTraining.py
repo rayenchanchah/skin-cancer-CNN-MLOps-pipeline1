@@ -1,7 +1,7 @@
-def Train(model,training_set,test_set):
-    model.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
+def Train(model,training_set,test_set,batch_size,optimizer,epochs,lr):
+    model.compile(optimizer = optimizer, loss = 'categorical_crossentropy', metrics = ['accuracy'])
     history= model.fit(training_set,
-                            epochs = 1,
+                            epochs = epochs,batch_size=batch_size,lr=lr,
                             validation_data = test_set)
     # list all data in history
     print(history.history.keys())

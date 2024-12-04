@@ -1,7 +1,7 @@
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import os
 
-def DataPreparation():
+def DataPreparation(rescale,shear_range,zoom_range,horizontal_flip,batch_size_Data_Generator):
     train_datagen = ImageDataGenerator(rescale = 1./255,
                                     shear_range = 0.2,
                                     zoom_range = 0.2,

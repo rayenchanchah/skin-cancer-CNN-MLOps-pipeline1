@@ -1,0 +1,11 @@
+# Data Preprocessing
+rescale: 1./255
+shear_range: 0.3
+zoom_range: 0.3
+horizontal_flip : True
+batch_size_Data_Generator: 32
+# Model Hyperparameters
+optimizer: adam
+batch_size: 32
+epochs: 5
+lr: 0.001

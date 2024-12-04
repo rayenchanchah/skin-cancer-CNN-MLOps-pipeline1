@@ -1,2 +1,4 @@
 .venv
 base_melanome_CNN
+.vscode
+src/model/__pycache__
