@@ -1,3 +1,5 @@
 .venv
 .vscode
 src/model/__pycache__
+.gitignore
+base_melanome_CNN/
