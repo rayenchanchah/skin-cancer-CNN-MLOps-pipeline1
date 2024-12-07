@@ -8,6 +8,9 @@ from src.model.Model import Model_init
 from src.model.ModelValidation import ModelValidation
 from src.test.ModelTesting import ModelTesting
 
+import tensorflow as tf
+import dvc
+
 def main():
 
     parser = argparse.ArgumentParser(description="")
@@ -24,10 +27,10 @@ def main():
     hist=Train(model,training_set,test_set,config["batch_size"],config["optimizer"],config["epochs"],config["lr"])
     
     ModelValidation(hist,model,test_set,training_set)
-    
+        
     ModelTesting(model,class_names)
     
-    model.save(os.getcwd()+"/models/model_first_try.h5")
+    model.save(os.getcwd()+"/models/model.h5")
 
 if __name__ == "__main__":
     main()
