@@ -3,3 +3,5 @@
 src/model/__pycache__
 .gitignore
 base_melanome_CNN/
+original_dataset
+augmented_dataset
