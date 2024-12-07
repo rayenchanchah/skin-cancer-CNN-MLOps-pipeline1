@@ -17,7 +17,7 @@ def main():
         config=yaml.safe_load(f)
         print(config)
         
-    num_classes,class_names,training_set,test_set=DataPreparation(config["rescale"],config["shear_range"],config["zoom_range"],config["horizontal_filp"],config["batch_size_Data_Generator"])
+    num_classes,class_names,training_set,test_set=DataPreparation(config["rescale"],config["shear_range"],config["zoom_range"],config["horizontal_flip"],config["batch_size_Data_Generator"])
     
     model=Model_init(num_classes)
     
