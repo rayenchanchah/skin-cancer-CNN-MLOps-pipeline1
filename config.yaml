@@ -7,5 +7,5 @@ batch_size_Data_Generator: 32
 # Model Hyperparameters
 optimizer: adam
 batch_size: 64
-epochs: 10
+epochs: 1
 lr: 0.001

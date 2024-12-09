@@ -11,13 +11,15 @@ def ModelTesting(model,class_names):
         
         test_images = test_loader.flow_from_directory(directory=os.getcwd()+'/data/original_dataset/real_test_set',target_size = (124,124))
         
+        image_names=os.listdir(os.getcwd()+'/data/original_dataset/real_test_set/set')
+        
         test_images=next(test_images)
                 
         plt.figure(figsize=(10, 10))
-        
+
         for i in range(len(test_images[0])):
                 
-                plt.subplot(4, 4, i+1)
+                plt.subplot(4, 4, i+1) 
                 plt.imshow(test_images[0][i].astype('uint8'))
                 plt.axis("off")
                 
@@ -31,7 +33,7 @@ def ModelTesting(model,class_names):
                         j = j + 1
 
                 plt.title(
-                        label="pred : "+class_names[np.where(result[0]==np.max(result[0]))[0][0]]
+                        label=image_names[i]+" pred : "+class_names[np.where(result[0]==np.max(result[0]))[0][0]]
                 )
                 
         plt.show()
