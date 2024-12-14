@@ -1,0 +1,38 @@
+stages:
+ 1-data_preparation:
+  cmd: python3 src/data/DataPreparation.py
+  deps:
+  - src/data/DataPreparation.py
+  - params.yaml
+  - data/streaming_data
+ 2-data_validation:
+  cmd: python3 src/data/data_validation.py
+  deps:
+  - src/data/data_validation.py
+  - params.yaml
+ 3-train:
+  cmd: python3 src/models/ModelTraining.py
+  deps:
+  - data/external/HMI_data
+  - src/models/ModelTraining.py
+  - src/models/util.py
+  - params.yaml
+ 4-model:
+  cmd: python3 src/models/Model.py
+  deps:
+  - src/models/Model.py
+  - params.yaml
+ 5-test:
+  cmd: python3 src/test/ModelTesting.py
+  deps:
+  - data/external/HMI_data
+  - src/test/ModelTesting.py
+  - models/best.pt
+  - params.yaml
+ 6-modelValidation:
+  cmd: python3 src/models/model_validation.py
+  deps:
+  data/external/HMI_data
+  - src/models/model_validation.py
+  - models/best.pt
+  - params.yaml
