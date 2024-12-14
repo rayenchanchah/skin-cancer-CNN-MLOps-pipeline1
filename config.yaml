@@ -9,3 +9,5 @@ optimizer: adam
 batch_size: 64
 epochs: 1
 lr: 0.001
+Expriment_name: Expriment
+data_version: data_ver
